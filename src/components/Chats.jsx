@@ -8,7 +8,7 @@ import axios from "axios";
 const Chats = () => {
   const history = useHistory();
   const { user } = useAuth();
-  const [setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const handleLogout = async () => {
     await auth.signOut();
@@ -30,7 +30,7 @@ const Chats = () => {
     axios
       .get("https://api.chatengine.io/users/me", {
         headers: {
-          "project-id": "473c2704-ccdd-4c1e-a311-9e2ad4cfa24e",
+          "project-id": process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID,
           "user-name": user.email,
           "user-secret": user.uid,
         },
@@ -58,6 +58,7 @@ const Chats = () => {
         });
       });
   }, [user, history]);
+
   if (!user) return "Loading";
   return (
     <div className="chats-page">
@@ -73,7 +74,7 @@ const Chats = () => {
         projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
         userName={user.email}
         userSecret={user.uid}
-        onChange={() => window.location.reload()}
+        // onNewChat={() => window.location.reload()}
       />
     </div>
   );

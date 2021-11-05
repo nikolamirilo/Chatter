@@ -3,11 +3,11 @@ import "firebase/auth";
 
 export const auth = firebase
   .initializeApp({
-    apiKey: "AIzaSyCjtAw0PJCT5ei8XjQh0zLxEStFgHm92Ak",
-    authDomain: "unichat-8cab4.firebaseapp.com",
-    projectId: "unichat-8cab4",
-    storageBucket: "unichat-8cab4.appspot.com",
-    messagingSenderId: "802270614630",
-    appId: "1:802270614630:web:d832dbc623a118061609a7",
+    apiKey: "AIzaSyAhg_g-2NK4TYJsCQFB4t664p2uH42vHnA",
+    authDomain: "chatter-app-cb9f3.firebaseapp.com",
+    projectId: "chatter-app-cb9f3",
+    storageBucket: "chatter-app-cb9f3.appspot.com",
+    messagingSenderId: "714840719715",
+    appId: "1:714840719715:web:aa6ca443358c8c4c345356",
   })
   .auth();
