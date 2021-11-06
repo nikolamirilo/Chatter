@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Chats from "./components/Chats";
 import Login from "./components/Login";
-require("dotenv").config();
 
 const App = () => {
   return (
@@ -15,5 +14,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;

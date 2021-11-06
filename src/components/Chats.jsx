@@ -4,6 +4,7 @@ import { ChatEngine } from "react-chat-engine";
 import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
 const Chats = () => {
   const history = useHistory();
@@ -21,7 +22,6 @@ const Chats = () => {
 
     return new File([data], "userPhoto.jpeg", { type: "image/jpeg" });
   };
-
   useEffect(() => {
     if (!user) {
       history.push("/");
@@ -59,24 +59,38 @@ const Chats = () => {
       });
   }, [user, history]);
 
-  if (!user) return "Loading";
-  return (
-    <div className="chats-page">
-      <div className="nav-bar">
-        <div className="logo-tab">Chatter</div>
-        <div className="logout-tab" onClick={handleLogout} style={{ fontSize: "1.5rem" }}>
-          Logout
-        </div>
+  if (!user || loading) {
+    return (
+      <div
+        style={{
+          backgroundColor: "#ffffff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Loader type="TailSpin" color="#002766" height={80} width={80} timeout={1000} />
       </div>
+    );
+  } else {
+    return (
+      <div className="chats-page">
+        <div className="nav-bar">
+          <div className="logo-tab">Chatter</div>
+          <div className="logout-tab" onClick={handleLogout} style={{ fontSize: "1.5rem" }}>
+            Logout
+          </div>
+        </div>
 
-      <ChatEngine
-        height="calc(100vh - 66px)"
-        projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
-        userName={user.email}
-        userSecret={user.uid}
-        // onNewChat={() => window.location.reload()}
-      />
-    </div>
-  );
+        <ChatEngine
+          height="calc(100vh - 66px)"
+          projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
+          userName={user.email}
+          userSecret={user.uid}
+        />
+      </div>
+    );
+  }
 };
 export default Chats;
