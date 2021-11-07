@@ -68,6 +68,12 @@
   background-color: #ffffff !important;
   color: #002766 !important;
 }
+.ce-text-input {
+  font-size: 1.2rem !important;
+}
+.ce-message-input-form {
+  background-color: #000000 !important;
+}
 .chats-page {
   position: absolute;
   top: 0px;
