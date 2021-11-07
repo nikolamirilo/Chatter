@@ -5,6 +5,13 @@ import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+const fs = require("fs");
+const path = `./.env`;
+const vars = `
+REACT_APP_CHAT_ENGINE_PROJECT_ID=${process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}\n
+REACT_APP_CHAT_ENGINE_PROJECT_ID=${process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY}
+`;
+fs.writeFileSync(path, vars);
 
 const Chats = () => {
   const history = useHistory();
