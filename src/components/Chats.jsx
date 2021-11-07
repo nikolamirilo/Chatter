@@ -60,7 +60,7 @@ const Chats = () => {
             .catch((error) => console.log(error));
         });
       });
-  }, [user, history, PRIVATE_KEY]);
+  }, [user, history]);
 
   if (!user || loading) {
     return (
