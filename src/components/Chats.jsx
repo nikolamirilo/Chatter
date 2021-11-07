@@ -5,18 +5,14 @@ import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-const fs = require("fs");
-const path = `./.env`;
-const vars = `
-REACT_APP_CHAT_ENGINE_PROJECT_ID=${process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}\n
-REACT_APP_CHAT_ENGINE_PROJECT_ID=${process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY}
-`;
-fs.writeFileSync(path, vars);
 
 const Chats = () => {
   const history = useHistory();
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
+
+  const PROJECT_ID = process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID;
+  const PRIVATE_KEY = process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID;
 
   const handleLogout = async () => {
     await auth.signOut();
@@ -37,7 +33,7 @@ const Chats = () => {
     axios
       .get("https://api.chatengine.io/users/me", {
         headers: {
-          "project-id": process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID,
+          "project-id": PRIVATE_KEY,
           "user-name": user.email,
           "user-secret": user.uid,
         },
@@ -57,14 +53,14 @@ const Chats = () => {
           axios
             .post("https://api.chatengine.io/users", formdata, {
               headers: {
-                "private-key": process.env.REACT_APP_CHAT_ENGINE_PRIVATE_KEY,
+                "private-key": PRIVATE_KEY,
               },
             })
             .then(() => setLoading(false))
             .catch((error) => console.log(error));
         });
       });
-  }, [user, history]);
+  }, [user, history, PRIVATE_KEY]);
 
   if (!user || loading) {
     return (
@@ -92,7 +88,7 @@ const Chats = () => {
 
         <ChatEngine
           height="calc(100vh - 66px)"
-          projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
+          projectID={PROJECT_ID}
           userName={user.email}
           userSecret={user.uid}
         />
