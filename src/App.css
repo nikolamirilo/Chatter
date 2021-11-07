@@ -105,7 +105,8 @@
 /* Login Page */
 
 #login-page {
-  background-image: linear-gradient(#096dd9, #002766);
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,6 +116,7 @@
 #login-card {
   padding-top: 20px;
   padding-bottom: 36px;
+  margin-bottom: 10vh;
   width: 30vw;
   text-align: center;
   background-color: white;
@@ -154,6 +156,15 @@
   left: calc(50vw - 33px);
   top: calc(50vh - 22px);
 }
+@media (max-width: 1268px) {
+  #login-card {
+    width: 70vw;
+  }
+
+  .login-button {
+    width: 60%;
+  }
+}
 @media (max-width: 768px) {
   #login-card {
     width: 95vw;
@@ -161,5 +172,17 @@
 
   .login-button {
     width: 80%;
+  }
+  #login-card {
+    margin-bottom: 5vh;
+  }
+  @media (max-width: 348px) {
+    #login-card {
+      width: 95vw;
+    }
+
+    .login-button {
+      width: 90%;
+    }
   }
 }
