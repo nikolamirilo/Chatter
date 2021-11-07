@@ -158,31 +158,39 @@
 }
 @media (max-width: 1268px) {
   #login-card {
-    width: 70vw;
+    width: 50vw;
   }
 
   .login-button {
     width: 60%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+  #login-card {
+    width: 50vw;
+  }
+  .login-button {
+    width: 80%;
+  }
+}
+@media (max-width: 588px) {
+  #login-card {
+    width: 85vw;
+  }
+
+  .login-button {
+    width: 85%;
+  }
+}
+#login-card {
+  margin-bottom: 5vh;
+}
+@media (max-width: 348px) {
   #login-card {
     width: 95vw;
   }
 
   .login-button {
-    width: 80%;
-  }
-  #login-card {
-    margin-bottom: 5vh;
-  }
-  @media (max-width: 348px) {
-    #login-card {
-      width: 95vw;
-    }
-
-    .login-button {
-      width: 90%;
-    }
+    width: 90%;
   }
 }
