@@ -5,7 +5,6 @@ import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-// import MessageForm from "./MessageForm";
 import ChatFeed from "./ChatFeed";
 
 const Chats = () => {
@@ -86,14 +85,11 @@ const Chats = () => {
         </div>
 
         <ChatEngine
-          height="88vh"
+          height="86vh"
           projectID="53835cc0-532c-4c62-a7eb-678f1dc0108f"
           userName={user.email}
           userSecret={user.uid}
           renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-          // renderNewMessageForm={(creds, chatId) => {
-          //   return <MessageForm creds={creds} chatId={chatId} />;
-          // }}
         />
       </div>
     );

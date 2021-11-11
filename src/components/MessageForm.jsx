@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
-import { SendOutlined, PictureOutlined } from "@ant-design/icons";
+import { ArrowUpOutlined, PaperClipOutlined } from "@ant-design/icons";
 
 const MessageForm = (props) => {
   const [value, setValue] = useState("");
   const { chatId, creds } = props;
+  const [hover, setHover] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +37,7 @@ const MessageForm = (props) => {
       />
       <label htmlFor="upload-button">
         <span className="image-button">
-          <PictureOutlined className="picture-icon" />
+          <PaperClipOutlined className="picture-icon" />
         </span>
       </label>
       <input
@@ -46,8 +47,21 @@ const MessageForm = (props) => {
         style={{ display: "none" }}
         onChange={handleUpload}
       />
-      <button type="submit" className="send-button">
-        <SendOutlined className="send-icon" />
+      <button
+        type="submit"
+        className="send-button"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        style={{
+          cursor: "pointer",
+          backgroundColor: hover ? "#002766" : "#082766",
+          display: "inline-block",
+          padding: "6px 3px",
+          borderRadius: "10px",
+          transform: "rotate(90deg)",
+        }}
+      >
+        <ArrowUpOutlined className="send-icon" />
       </button>
     </form>
   );

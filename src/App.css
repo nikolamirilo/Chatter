@@ -8,11 +8,18 @@
 }
 
 /* Chats Page */
+.ce-send-message-button {
+  position: absolute;
+  bottom: 20px !important;
+}
 .ce-chats-container {
   background-color: #ffffff !important;
 }
 .ce-feed-container {
   background-color: black !important;
+}
+.ce-send-message-button {
+  font-size: 10rem !important;
 }
 .ce-primary-button {
   border-radius: 6px !important;
@@ -77,6 +84,13 @@
 .ce-message-input-form {
   background-color: #000000 !important;
 }
+.ce-avatar {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 30px !important;
+  background-size: 35px !important;
+  margin-left: 20%;
+}
 .chats-page {
   position: absolute;
   top: 0px;
@@ -86,7 +100,7 @@
 }
 .nav-bar {
   width: 100%;
-  height: 5vh;
+  height: 7vh;
   background-color: #002766;
   display: flex;
   justify-content: space-between;
@@ -198,7 +212,7 @@
 /*Message Form*/
 .message-form-container {
   position: fixed;
-  background-color: rgba(230, 230, 230);
+  background-color: #ffffff;
   bottom: 0;
   height: 8vh;
   width: 50vw;
@@ -219,6 +233,7 @@
 
 .message-input {
   width: calc(100% - 100px);
+  height: 5vh;
   border: 1px solid white;
   padding: 0px 10px;
   outline: none;
@@ -242,13 +257,12 @@
 }
 
 .send-button {
-  height: 42px;
   border: none !important;
-  padding: 0px 5px;
   cursor: pointer;
   outline: none;
-  background-color: #ffffff;
-  color: #002766;
+  color: #ffffff;
+
+  border-radius: 20px 10px;
 }
 .send-button:active {
   outline: none !important;
