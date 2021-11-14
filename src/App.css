@@ -8,9 +8,19 @@
 }
 
 /* Chats Page */
+#ce-feed-container,
+.ce-chat-feed-container {
+  background-image: black !important;
+}
 .ce-send-message-button {
   position: absolute;
   bottom: 20px !important;
+}
+.ql-code,
+.ql-strike,
+.ql-underline,
+.ql-link {
+  display: none !important;
 }
 .ce-chats-container {
   background-color: #ffffff !important;
@@ -18,6 +28,22 @@
 .ce-feed-container {
   background-color: black !important;
 }
+.ql-editor,
+#toolbar {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/* .ql-editor p:before {
+  content: "Type message";
+  color: gray;
+}
+.ql-editor p:active,
+.ql-editor p:focus,
+.ql-editor p:hover,
+.ql-editor p:active {
+  content: "" !important;
+} */
 .ce-send-message-button {
   font-size: 10rem !important;
 }
