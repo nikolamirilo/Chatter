@@ -8,10 +8,6 @@
 }
 
 /* Chats Page */
-#ce-feed-container,
-.ce-chat-feed-container {
-  background-image: black !important;
-}
 .ce-send-message-button {
   position: absolute;
   bottom: 20px !important;
@@ -24,9 +20,6 @@
 }
 .ce-chats-container {
   background-color: #ffffff !important;
-}
-.ce-feed-container {
-  background-color: black !important;
 }
 .ql-editor,
 #toolbar {
