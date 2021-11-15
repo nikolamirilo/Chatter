@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-// import ChatFeed from "./ChatFeed";
+import ChatFeed from "./ChatFeed";
 
 const Chats = () => {
   const history = useHistory();
@@ -89,7 +89,7 @@ const Chats = () => {
           projectID="53835cc0-532c-4c62-a7eb-678f1dc0108f"
           userName={user.email}
           userSecret={user.uid}
-          // renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+          renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
         />
       </div>
     );

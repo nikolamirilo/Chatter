@@ -12,6 +12,15 @@
   position: absolute;
   bottom: 20px !important;
 }
+.ce-chat-title,
+.ce-chat-list-mobile-option,
+.anticon-setting,
+.anticon-menu {
+  color: #002766 !important;
+}
+.ce-chat-title-text {
+  font-weight: 700 !important;
+}
 .ql-code,
 .ql-strike,
 .ql-underline,
@@ -60,7 +69,7 @@
 .ce-my-message-bubble {
   background-color: #002766 !important;
   color: white;
-  margin-right: 1vw;
+  margin-right: 0.5vw !important;
 }
 #ce-send-message-button {
   background-color: #002766 !important;
@@ -100,9 +109,6 @@
 .ce-text-input {
   font-size: 1.2rem !important;
 }
-.ce-message-input-form {
-  background-color: #000000 !important;
-}
 .ce-avatar {
   width: 30px !important;
   height: 30px !important;
@@ -119,7 +125,7 @@
 }
 .nav-bar {
   width: 100%;
-  height: 7vh;
+  height: 5vh;
   background-color: #002766;
   display: flex;
   justify-content: space-between;
@@ -127,7 +133,9 @@
 }
 
 .logo-tab {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-family: monospace;
+  font-style: italic;
   font-weight: 700;
   color: white;
   margin-left: 2%;
@@ -233,7 +241,7 @@
   position: fixed;
   background-color: #ffffff;
   bottom: 0;
-  height: 8vh;
+  height: 7vh;
   width: 50vw;
   padding: 0;
 }
@@ -393,7 +401,7 @@
   .message-form-container {
     position: fixed;
     bottom: 0;
-    height: 8vh;
+    height: 7vh;
     width: 100vw;
     padding: 0;
     background-color: #ffffff;
